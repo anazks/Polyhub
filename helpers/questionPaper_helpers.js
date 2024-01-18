@@ -4,6 +4,17 @@ const collections = require("../config/collections");
 
 module.exports = {
   //add , delete , fetch all , fetch by department
+  addNewMaterial: (questionObj) => {
+    return new Promise((resolve, reject) => {
+      console.log(questionObj);
+      db.get()
+        .collection(collections.STUDY_MATERIAL)
+        .insertOne(questionObj)
+        .then((data) => {
+          resolve(questionObj._id.toString());
+        });
+    });
+  },
   addNewQuestionPaper: (questionObj) => {
     return new Promise((resolve, reject) => {
       console.log(questionObj);
@@ -25,6 +36,18 @@ module.exports = {
       let allQuestions = await db
         .get()
         .collection(collections.QUESTION_PAPERS)
+        .find()
+        // .sort({ department_name: -1 })
+        .toArray();
+      resolve(allQuestions);
+    });
+  },
+  fetchAllDocs: () => {
+    //get the data from the db and return
+    return new Promise(async (resolve, reject) => {
+      let allQuestions = await db
+        .get()
+        .collection(collections.STUDY_MATERIAL)
         .find()
         // .sort({ department_name: -1 })
         .toArray();

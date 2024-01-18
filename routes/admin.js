@@ -162,6 +162,33 @@ router.get("/add-new-questionpaper", (req, res, next) => {
     
   res.render("admin/add-question-paper");
 });
+router.get("/add-new-material", (req, res, next) => {
+  if(req.session.staff){
+    var {staff} = req.session;
+    console.log(staff)
+    res.render("admin/add-new-Materials",{staff});
+  }else{
+    res.render("admin/add-new-Materials");
+  }
+});
+
+
+
+router.post("/add-new-studyMaterials", (req, res, next) => {
+  questionHelper.addNewMaterial(req.body).then((docId) => {
+    console.log(docId);
+    let docFromClient = req.files.qustionP;
+    let uploadPath = "./public/docs/" + docId + ".pdf";
+    docFromClient.mv(uploadPath, (err, done) => {
+      if (!err) res.redirect("/admin/");
+      else {
+        res.status(400);
+        res.redirect("/admin/add-new-material");
+      }
+    });
+  });
+});
+
 router.post("/add-new-questionpaper", (req, res, next) => {
   questionHelper.addNewQuestionPaper(req.body).then((docId) => {
     console.log(docId);

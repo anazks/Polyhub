@@ -54,6 +54,20 @@
             border:1px solid  green;
             margin: auto;
         }
+        .btns{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+     
+        }
+        .btn{
+            height: 30px;
+            gap: 5px;
+            margin-top: 36px;
+            border-radius: 20px;
+            padding: 3px;
+        }
 
     </style>
 </head>
@@ -135,14 +149,16 @@
 
                     </div>
                 </div>
-                <a href="/gallery" class="nav-item nav-link"> Gallery</a>
+                {{!-- <a href="/gallery" class="nav-item nav-link"> Gallery</a> --}}
                 
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+               <div class="btns">
+                 <button  type="button" class="btn btn-primary btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Login
                </button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                <button style="margin-left: 2px;" type="button" class="btn btn-danger btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                             Register
                </button>
+               </div>
                {{#if user}}
                        <select name="" id="" class="nameBoard">
                         <option value="">{{user.username}}</option>
@@ -610,6 +626,64 @@
     </div>
 </div>
 
+
+                        <h1 class="display-6 mb-4">Study Meterials</h1>
+{{!-- second cards --}}
+<div class="body2">
+
+{{#if user}}
+   <div class="containerLink">
+    {{#each docs}}
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    
+                    <h3><a href="#">{{this.subject}}</a></h3>
+                    <h4>{{this.semester}}</h4>
+                    <h4>{{this.department}}</h4>
+
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <span>{{year_month}}</span>
+                    <a href="/docs/{{_id}}.pdf" download="{{subject}} questionpaper{{year_month}}">click to
+                </div>
+            </div>
+        </div>
+       {{/each}}
+    </div>
+</div>
+
+{{else}}
+
+
+
+   <div class="containerLink">
+    {{#each docs}}
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    
+                    <h3><a href="#">{{this.subject}}</a></h3>
+                    <h4>{{this.semester}}</h4>
+                    <h4>{{this.department}}</h4>
+
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <span>{{year_month}}</span>
+                    <a>Login to download
+                </div>
+            </div>
+        </div>
+       {{/each}}
+    </div>
+</div>
+
+
+{{/if}}
 
 <!------- activities row--------->
    <h1 class="display-6 mb-4">Activities</h1>

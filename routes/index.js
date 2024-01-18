@@ -57,11 +57,13 @@ router.get('/Error/:status', (req, res) => {
 router.get("/", async function (req, res, next) {
   try {
     let notifications = await notificationHelper.fetchAllNotifications();
+    let docs = await questionPaperHelper.fetchAllDocs();
+    console.log(docs,"docs")
     if(req.session.user){
       let user = req.session.user;
-      res.render("user/home", { notificationList: notifications,user});
+      res.render("user/home", { notificationList: notifications,user,docs});
     }else{
-      res.render("user/home", { notificationList: notifications });
+      res.render("user/home", { notificationList: notifications,docs   });
     }
     
   } catch (error) {
