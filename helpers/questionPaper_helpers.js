@@ -87,6 +87,30 @@ module.exports = {
       resolve(departmentQuestions);
     });
   },
+  fecthMaterial: (department) => {
+    //fetch the details of staff from a single department
+    return new Promise(async (resolve, reject) => {
+      console.log(department);
+      let satudyMateral  = await db
+        .get()
+        .collection(collections.STUDY_MATERIAL)
+        .find({ department: department })
+        .toArray();
+      resolve(satudyMateral);
+    });
+  },
+  fecthSingleMaterial: (subject) => {
+    //fetch the details of staff from a single department
+    return new Promise(async (resolve, reject) => {
+      console.log(subject);
+      let searchResult  = await db
+        .get()
+        .collection(collections.STUDY_MATERIAL)
+        .find({ subject: subject })
+        .toArray();
+      resolve(searchResult);
+    });
+  },
   fetchOneQuestionPaper: (q_id) => {
     return new Promise(async (resolve, reject) => {
       let qObj = await db

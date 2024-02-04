@@ -151,7 +151,7 @@
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
-                            src="img/R-Preetha.jpg" style="object-fit: cover;">
+                            src="https://images.squarespace-cdn.com/content/v1/5fce63270356d927d7eecdbd/033e9988-2ac8-4cb9-8b9f-5bf05fb22dcb/gff.jpg" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -371,6 +371,28 @@
                 <div class="card">
                     <p>{{semester}}, {{subject}},date:{{year_month}}</p>
                     <a href="/questions/{{_id}}.pdf" download="{{subject}} questionpaper{{year_month}}">click to
+                        download</a>
+                    <div class="FRAME">
+                        <iframe scrolling="yes" src="/questions/{{_id}}.pdf">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+  {{/if}}
+    </div>
+
+
+        <div class="container">
+        <h2 style="text-align: center;margin-top:50px">Study Material</h2>
+        {{#if material}}
+        <div class="row">
+            {{#each material}}
+            <div class="column">
+                <div class="card">
+                    <p>{{semester}}, {{subject}},date:{{year_month}}</p>
+                    <a href="/docs/{{_id}}.pdf" download="{{subject}} questionpaper{{year_month}}">click to
                         download</a>
                     <div class="FRAME">
                         <iframe scrolling="yes" src="/questions/{{_id}}.pdf">
