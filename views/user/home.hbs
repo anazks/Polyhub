@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> NSS POLYTECNIC COLLEGE PANDALAM</title>
+    <title>COLLEGE PANDALAM</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -20,6 +20,7 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -70,18 +71,36 @@
         }
         .searchBox{
             border: none;
-            width: 200px;
-            height: 30px;
+            width: 350px;
+            height: 39px;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+
+            border: 3px solid rgb(212, 237, 208);
+            text-align: center;
         }
         .searchBox:hover{
-            border: 1px solid red;
+            border: 2px solid rgb(25, 236, 67));
         }
         .searchBtn{
             background-color: white;
+            border: 1px solid greenyellow;
             border: none;
+            height: 40px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
         }
         .searchBtn:hover{
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .submitBtn{
+             background-color: white;
+            border: 1px solid greenyellow;
+            border: none;
+            height: 39px;
+            width: 70px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
         }
     </style>
 </head>
@@ -142,10 +161,10 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <form action="/searchMaterial" class="seach" method="post">
+        {{!-- <form action="/searchMaterial" class="seach" method="post">
             <input type="text" class="searchBox" name="subject" placeholder="Search For study material">
                 <input type="Submit" class="searchBtn">
-        </form>
+        </form> --}}
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                     
@@ -313,17 +332,24 @@
                     <img class="w-100" src="img/poly1.jpeg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">An investment in knowledge
-                                pays the best interest.</h5>
+                                   <form action="/searchMaterial" class="seach" method="post">
+                                        <input type="text" class="searchBox" name="subject" placeholder="Search For study material">
+                                            {{!-- <input type="Submit" class="searchBtn"> --}}
+                                            <button type="submit" value="search" class="submitBtn"><i class="fa fa-search" style="font-size:15px"></i></button>
+                                    </form>
                         </div>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Education is the movement from darkness to light.</h1>
+
                      </div>
                 </div>
                 <div class="carousel-item">
                     <img class="w-100" src="https://i.pinimg.com/474x/66/fe/f7/66fef7b3509f77e544e14b054ade4f92.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Education is not preparation for life; education is life itself.</h5>
+                            <form action="/searchMaterial" class="seach" method="post">
+                                        <input type="text" class="searchBox" name="subject" placeholder="Search For study material">
+                                            {{!-- <input type="Submit" class="searchBtn"> --}}
+                                            <button type="submit" value="search" class="submitBtn"><i class="fa fa-search" style="font-size:15px"></i></button>
+                            </form>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Education is a better safeguard of liberty than a standing army</h1>
                             
                         </div>
