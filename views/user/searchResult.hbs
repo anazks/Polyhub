@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+    <meta charset="utf-8">
+    <title>COLLEGE PANDALAM</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Favicon -->
+    <link href="/img/NSS_Emblem.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .nameBoard {
+            height: 50%;
+            margin-top: 2%;
+            margin: auto;
+            margin-left: 10px;
+            border: none;
+            background-color: aqua;
+        }
+
+        .form-container {
+            width: 100%;
+            margin: auto;
+        }
+
+        .form-container input {
+            width: 100%;
+            border: none;
+        }
+
+        .btn-submit {
+            background-color: rgb(98, 131, 214);
+            border: 1px solid green;
+            margin: auto;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+        }
+
+        .btn {
+            height: 30px;
+            gap: 5px;
+            margin-top: 36px;
+            border-radius: 20px;
+            padding: 3px;
+        }
+
+        .searchBox {
+            border: none;
+            width: 350px;
+            height: 39px;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+
+            border: 3px solid rgb(212, 237, 208);
+            text-align: center;
+        }
+
+        .searchBox:hover {
+            border: 2px solid rgb(25, 236, 67));
+        }
+
+        .searchBtn {
+            background-color: white;
+            border: 1px solid greenyellow;
+            border: none;
+            height: 40px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+
+        .searchBtn:hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .submitBtn {
+            background-color: white;
+            border: 1px solid greenyellow;
+            border: none;
+            height: 39px;
+            width: 70px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+    </style>
+</head>
+</head>
+<body>
+    
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0" style="color: white;">
+        <a href="index.html" class="navbar-brand p-0">
+            <img style="width: 170px;height:90px"
+                src="https://universitykart.b-cdn.net//Content/upload/admin/2gxbml1q.ori.jpg" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1>POLYHUB</h1>
+
+        {{!-- <form action="/searchMaterial" class="seach" method="post">
+            <input type="text" class="searchBox" name="subject" placeholder="Search For study material">
+            <input type="Submit" class="searchBtn">
+        </form> --}}
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+
+                {{!-- <img style="width: 90px;" src="img/College_Emblem.png" alt=""> --}}
+
+                <a href="/" class="nav-item nav-link active">Home</a>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Departments</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="/Computer" class="dropdown-item">Computer Engineering</a>
+                        <a href="/ec" class="dropdown-item">Electronics and Communication</a>
+                        <a href="/civil" class="dropdown-item">Civil Engineering</a>
+                        <a href="/mech" class="dropdown-item">Mechanical Engineering</a>
+                        <a href="/eee" class="dropdown-item">Electrical end Electronics Engineering</a>
+                        <a href="/genaral" class="dropdown-item">General Department</a>
+
+                    </div>
+                </div>
+                {{!-- <a href="/gallery" class="nav-item nav-link"> Gallery</a> --}}
+
+                <div class="btns">
+                    <button type="button" class="btn btn-primary btn" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Login
+                    </button>
+                    <button style="margin-left: 2px;" type="button" class="btn btn-danger btn" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2">
+                        Register
+                    </button>
+                </div>
+                {{#if user}}
+                <select name="" id="" class="nameBoard">
+                    <option value="">{{user.username}}</option>
+                </select>
+                <button class="nameBoard"><a href="/logout">Logout</a></button>
+                {{/if}}
+            </div>
+            <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal">
+
+
+        </div>
+    </nav>
+    <h1 class="display-6 mb-4">Study Meterials</h1>
+    {{!-- second cards --}}
+    <div class="body2">
+        <div class="containerLink">
+            {{#each docs}}
+            <div class="col-3 mb-3">
+                <div class="card border-0 shadow-none" style="background: #fff;">
+                    <div class="face face1">
+                        <div class="content">
+                            <h3><a href="#">{{this.subject}}</a></h3>
+                            <h4>{{this.semester}}</h4>
+                            <h4>{{this.department}}</h4>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <span>{{year_month}}</span>
+                            <a href="/docs/{{_id}}.pdf" download="{{subject}} questionpaper{{year_month}}">click to
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</body>
+</html>

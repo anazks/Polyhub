@@ -30,6 +30,11 @@ module.exports = {
     let count = await db.get().collection(collections.QUESTION_PAPERS).count();
     return count;
   },
+  getDocsCount: async () => {
+    let count = await db.get().collection(collections.STUDY_MATERIAL).count();
+    return count;
+  },
+  
   fetchAllQuestionPapers: () => {
     //get the data from the db and return
     return new Promise(async (resolve, reject) => {
