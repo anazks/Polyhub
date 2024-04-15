@@ -82,4 +82,15 @@ module.exports = {
       }
     });
   },
+  selectAllUser: () => {
+    //get the data from the db and return
+    return new Promise(async (resolve, reject) => {
+      let StaffList = await db
+        .get()
+        .collection(collection.USER_COLLECTION)
+        .find()
+        .toArray();
+      resolve(StaffList);
+    });
+  },
 };

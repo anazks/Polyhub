@@ -80,6 +80,27 @@ module.exports = {
       }
     });
   },
+  deleteUser: (userID) => {
+    //delete the data of the staff from db usin the id
+    return new Promise(async (resolve, reject) => {
+      let deletedStaff = await db
+        .get()
+        .collection(collections.STAFF_LIST)
+        .find({ _id: objectId(userID) })
+        .toArray();
+      console.log(deletedStaff);
+      if (deletedStaff.length > 0) {
+        db.get()
+          .collection(collections.STAFF_LIST)
+          .deleteOne({ _id: objectId(staffId) })
+          .then(() => {
+            resolve(deletedStaff);
+          });
+      } else {
+        resolve({ errorMsg: " TEH STAFF DOESN'T EXIST !!!" });
+      }
+    });
+  },
   updateStaff: (staffId, staffData) => {
     //update the data of the staff using staffId
     return new Promise(async (resolve, reject) => {

@@ -30,7 +30,6 @@ router.get('/departmentLogin',(req,res)=>{
 })
 
 router.post('/Dlogin', async(req,res)=>{
-  console.log("post")
     try {
      let email = req.body.email;
      let phone = req.body.phone;
@@ -218,7 +217,7 @@ router.get("/edit-questionpaper/:id", async (req, res, next) => {
   try {
     let q_obj = await questionHelper.fetchOneQuestionPaper(q_id);
 
-    if (q_obj.errorMsg) {
+    if (q_obj.errorMsg) {remove-user
       res.status(404);
       res.redirect("/admin/question-papers");
     } else
@@ -527,6 +526,16 @@ router.get("/staff-list", async (req, res, next) => {
     res.redirect('/error/503')
   }
 });
+router.get("/user-list", async (req, res, next) => {
+  try {
+    //get data from the database and send it
+    let userList = await adminHelpers.selectAllUser();
+    console.log(userList,"staffs90909099090")
+     res.render("admin/view-all-user", { userList });
+  } catch (error) {
+    res.redirect('/error/503')
+  }
+});
 
 router.get("/add-new-staff", async (req, res, next) => {
   res.render("admin/add-new-staffs");
@@ -565,6 +574,22 @@ router.get("/remove-staff/:id", async (req, res, next) => {
         res.status(400).redirect("/admin/staff-list");
       } else {
         res.redirect("/admin/staff-list");
+      }
+    })
+    .catch(() => {
+      res.status(404).redirect("/admin/staff-list");
+    });
+});
+router.get("/remove-user/:id", async (req, res, next) => {
+  let userId = req.params.id;
+  console.log(userId,"userid")
+  staffHelper
+    .deleteUser(userId)
+    .then((deletedStaff) => {
+      if (deletedStaff.errorMsg) {
+        res.status(400).redirect("/admin/user-list");
+      } else {
+        res.redirect("/admin/user-list");
       }
     })
     .catch(() => {
