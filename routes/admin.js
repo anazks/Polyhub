@@ -103,16 +103,18 @@ router.get("/", async function (req, res, next) {
     let forms = await formHelper.getFormsCount();
     let photos = await photosHelper.getPhotosCount();
     let staffList = await staffHelper.selectAllStaff();
+    let doscList = await questionHelper.getDocsCount();
+    console.log(doscList,"docs list")
     // console.log(staffList);
     if(req.session.staff){
       res.render("admin/admin", {
         staffPartials: true,
-        counts: { questions, forms, photos, staffList },
+        counts: { questions, forms, photos, staffList,doscList },
       });
     }else{
       res.render("admin/admin", {
         partials: true,
-        counts: { questions, forms, photos, staffList },
+        counts: { questions, forms, photos, staffList,doscList },
       });
     }
    
@@ -149,7 +151,32 @@ router.get("/question-papers", async (req, res, next) => {
     res.redirect('/error/503')
   }
 });
+router.get("/docs", async (req, res, next) => {
+  try {
+    if(req.session.staff){
+      let   staffPartials = true
+    }else{
+      staffPartials =  false
+    }
+    let docsList = await questionHelper.fetchAllDocs()
+    console.log(docsList)
+  if(req.session.staff){
+    res.render("admin/view-all-questions", {
+      docsList: docsList,
+      staffPartials:true
+    });
+  }else{
+    res.render("admin/view-all-docs", {
+      docsList: docsList,
+    });
+  }
+     // console.log(staffList);
 
+  } catch (error) {
+    console.log(error)
+    res.redirect('/error/503')
+  }
+});
 router.get("/add-new-questionpaper", (req, res, next) => {
   if(req.session.staff){
     var {staff} = req.session;

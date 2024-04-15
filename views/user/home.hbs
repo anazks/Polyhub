@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Favicon -->
     <link href="/img/NSS_Emblem.png" rel="icon">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -34,7 +34,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <style>
-        .nameBoard{
+        .nameBoard {
             height: 50%;
             margin-top: 2%;
             margin: auto;
@@ -42,34 +42,40 @@
             border: none;
             background-color: aqua;
         }
-        .form-container{
+
+        .form-container {
             width: 100%;
             margin: auto;
         }
-        .form-container input{
+
+        .form-container input {
             width: 100%;
             border: none;
         }
-        .btn-submit{
+
+        .btn-submit {
             background-color: rgb(98, 131, 214);
-            border:1px solid  green;
+            border: 1px solid green;
             margin: auto;
         }
-        .btns{
+
+        .btns {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
-     
+
         }
-        .btn{
+
+        .btn {
             height: 30px;
             gap: 5px;
             margin-top: 36px;
             border-radius: 20px;
             padding: 3px;
         }
-        .searchBox{
+
+        .searchBox {
             border: none;
             width: 350px;
             height: 39px;
@@ -79,10 +85,12 @@
             border: 3px solid rgb(212, 237, 208);
             text-align: center;
         }
-        .searchBox:hover{
+
+        .searchBox:hover {
             border: 2px solid rgb(25, 236, 67));
         }
-        .searchBtn{
+
+        .searchBtn {
             background-color: white;
             border: 1px solid greenyellow;
             border: none;
@@ -90,11 +98,13 @@
             border-top-right-radius: 30px;
             border-bottom-right-radius: 30px;
         }
-        .searchBtn:hover{
+
+        .searchBtn:hover {
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
-        .submitBtn{
-             background-color: white;
+
+        .submitBtn {
+            background-color: white;
             border: 1px solid greenyellow;
             border: none;
             height: 39px;
@@ -129,12 +139,13 @@
                 <div class="d-inline-flex align-items-center">
                     <i class="far fa-clock text-primary me-2"></i>
                     <small class="py-2">
-                        
-                            <marquee width="650" style="font-size: 20px;">
-                                {{#each notificationList}}<span style="text-decoration: underline;">{{title}}</span>:{{content}} 
-                                {{/each}}
-                            </marquee>
-                         
+
+                        <marquee width="650" style="font-size: 20px;">
+                            {{#each notificationList}}<span
+                                style="text-decoration: underline;">{{title}}</span>:{{content}}
+                            {{/each}}
+                        </marquee>
+
                     </small>
                 </div>
             </div>
@@ -156,24 +167,25 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0" style="color: white;">
         <a href="index.html" class="navbar-brand p-0">
-           <img style="width: 170px;height:90px" src="https://universitykart.b-cdn.net//Content/upload/admin/2gxbml1q.ori.jpg" alt="">
+            <img style="width: 170px;height:90px"
+                src="https://universitykart.b-cdn.net//Content/upload/admin/2gxbml1q.ori.jpg" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
-                         <h1>POLYHUB</h1>
+        <h1>POLYHUB</h1>
 
         {{!-- <form action="/searchMaterial" class="seach" method="post">
             <input type="text" class="searchBox" name="subject" placeholder="Search For study material">
-                <input type="Submit" class="searchBtn">
+            <input type="Submit" class="searchBtn">
         </form> --}}
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                    
-                     {{!-- <img style="width: 90px;" src="img/College_Emblem.png" alt=""> --}}
-                 
+
+                {{!-- <img style="width: 90px;" src="img/College_Emblem.png" alt=""> --}}
+
                 <a href="/" class="nav-item nav-link active">Home</a>
-              
+
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Departments</a>
                     <div class="dropdown-menu m-0">
@@ -182,124 +194,126 @@
                         <a href="/civil" class="dropdown-item">Civil Engineering</a>
                         <a href="/mech" class="dropdown-item">Mechanical Engineering</a>
                         <a href="/eee" class="dropdown-item">Electrical end Electronics Engineering</a>
-                         <a href="/genaral" class="dropdown-item">General Department</a>
+                        <a href="/genaral" class="dropdown-item">General Department</a>
 
                     </div>
                 </div>
                 {{!-- <a href="/gallery" class="nav-item nav-link"> Gallery</a> --}}
-                
-               <div class="btns">
-                 <button  type="button" class="btn btn-primary btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Login
-               </button>
-                <button style="margin-left: 2px;" type="button" class="btn btn-danger btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                            Register
-               </button>
-               </div>
-               {{#if user}}
-                       <select name="" id="" class="nameBoard">
-                        <option value="">{{user.username}}</option>
-                       </select>
-                        <button class="nameBoard"><a href="/logout">Logout</a></button>
+
+                <div class="btns">
+                    <button type="button" class="btn btn-primary btn" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Login
+                    </button>
+                    <button style="margin-left: 2px;" type="button" class="btn btn-danger btn" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2">
+                        Register
+                    </button>
+                </div>
+                {{#if user}}
+                <select name="" id="" class="nameBoard">
+                    <option value="">{{user.username}}</option>
+                </select>
+                <button class="nameBoard"><a href="/logout">Logout</a></button>
                 {{/if}}
             </div>
             <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal">
-              
-        
+
+
         </div>
     </nav>
     <!-- Navbar End -->
 
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          
-<div class="question-content">
-  <div class="form-container">
-  
-    <form action="/Login" method="post" enctype="multipart/form-data">
-      <div class="input-group">
-        <label for="title">Email</label>
-        <input type="text" name="email" id="username" required />
-      </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
-      <div class="input-group">
-        <label for="password">Password</label>
+                    <div class="question-content">
+                        <div class="form-container">
 
-        <input type="password" name="password" id="password" />
-      </div>
-      <div class="btn-group">
-        <input type="submit" class="btn-submit" value="Login" />
-      </div>
-    </form>
+                            <form action="/Login" method="post" enctype="multipart/form-data">
+                                <div class="input-group">
+                                    <label for="title">Email</label>
+                                    <input type="text" name="email" class="border" id="username" required />
+                                </div>
 
-  </div>
-</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+                                <div class="input-group">
+                                    <label for="password">Password</label>
+
+                                    <input type="password" class="border" name="password" id="password" required />
+                                </div>
+                                <div class="btn-group">
+                                    <input type="submit" class="btn-submit mt-2" value="Login" />
+                                </div>
+                            </form>
+                            <a href="/admin/departmentLogin">Login as Department</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
-{{!-- Register modal --}}
+    {{!-- Register modal --}}
 
 
-    
- <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Register</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-          
-<div class="question-content">
-  <div class="form-container">
-  
-    <form action="/register" method="post" enctype="multipart/form-data">
-      <div class="input-group">
-        <label for="title">Username</label>
-        <input type="text" name="username" id="username" required />
-      </div>
-      <div class="input-group">
-        <label for="title">Email</label>
-        <input type="text" name="email" id="username" required />
-      </div>
-      <div class="input-group">
-        <label for="title">Mobile</label>
-        <input type="text" name="mobile" id="username" required />
-      </div>
 
-      <div class="input-group">
-        <label for="password">Password</label>
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Register</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
-        <input type="password" name="password" id="password" />
-      </div>
-      <div class="btn-group">
-        <input type="submit" class="btn-submit" value="Login" />
-      </div>
-    </form>
-    <a href="/admin/departmentLogin">Login as Department</a>
-  </div>
-</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+                    <div class="question-content">
+                        <div class="form-container">
+
+                            <form action="/register" method="post" enctype="multipart/form-data">
+                                <div class="input-group">
+                                    <label for="title">Username</label>
+                                    <input type="text" name="username" class="border" id="username" required />
+                                </div>
+                                <div class="input-group">
+                                    <label for="title">Email</label>
+                                    <input type="text" name="email" class="border" id="username" required />
+                                </div>
+                                <div class="input-group">
+                                    <label for="title">Mobile</label>
+                                    <input type="text" name="mobile" class="border" id="username" required />
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="password">Password</label>
+
+                                    <input type="password" name="password" class="border" id="password" />
+                                </div>
+                                <div class="btn-group">
+                                    <input type="submit" class="btn-submit mt-3" value="Register" />
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
     <!-- Full Screen Search Start -->
@@ -320,8 +334,8 @@
             </div>
         </div>
     </div>
-   
- 
+
+
 
     <!-- Full Screen Search End -->
 
@@ -334,26 +348,32 @@
                     <img class="w-100" src="img/poly1.jpeg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                                   <form action="/searchMaterial" class="seach" method="post">
-                                        <input type="text" class="searchBox" name="subject" placeholder="Search For study materialS.">
-                                            {{!-- <input type="Submit" class="searchBtn"> --}}
-                                            <button type="submit" value="search" class="submitBtn"><i class="fa fa-search" style="font-size:15px"></i></button>
-                                    </form>
+                            <form action="/searchMaterial" class="seach" method="post">
+                                <input type="text" class="searchBox" name="subject"
+                                    placeholder="Search For study materialS.">
+                                {{!-- <input type="Submit" class="searchBtn"> --}}
+                                <button type="submit" value="search" class="submitBtn"><i class="fa fa-search"
+                                        style="font-size:15px"></i></button>
+                            </form>
                         </div>
 
-                     </div>
+                    </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="https://i.pinimg.com/474x/66/fe/f7/66fef7b3509f77e544e14b054ade4f92.jpg" alt="Image">
+                    <img class="w-100" src="https://i.pinimg.com/474x/66/fe/f7/66fef7b3509f77e544e14b054ade4f92.jpg"
+                        alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <form action="/searchMaterial" class="seach" method="post">
-                                        <input type="text" class="searchBox" name="subject" placeholder="Search For study material">
-                                            {{!-- <input type="Submit" class="searchBtn"> --}}
-                                            <button type="submit" value="search" class="submitBtn"><i class="fa fa-search" style="font-size:15px"></i></button>
+                                <input type="text" class="searchBox" name="subject"
+                                    placeholder="Search For study material">
+                                {{!-- <input type="Submit" class="searchBtn"> --}}
+                                <button type="submit" value="search" class="submitBtn"><i class="fa fa-search"
+                                        style="font-size:15px"></i></button>
                             </form>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Education is a better safeguard of liberty than a standing army</h1>
-                            
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Education is a better safeguard of
+                                liberty than a standing army</h1>
+
                         </div>
                     </div>
                 </div>
@@ -368,12 +388,12 @@
             </button>
         </div>
     </div>
-  
+
     <!-- Carousel End -->
 
 
     <!-- Banner Start -->
-    
+
     <!-- Banner Start -->
 
 
@@ -386,20 +406,28 @@
                         <h5 class="position-relative d-inline-block text-primary text-uppercase">About Us</h5>
                         <h1 class="display-5 mb-0">About</h1>
                     </div>
-                    <h4 class="text-body fst-italic mb-4"></h4></h4>
-                    <p class="mb-4"> Polytechnic Colleges spreads its charm and beauty by moulding technicians of repute, spreading over the entire globe, serving for the technological excellence from the establishment year 1958 onwards.
-                    One of the oldest Grant-in-aid Polytechnic College, started by the legend BHARATHA KESARI PADMABHUSHAN SRI MANNATHU PADMANABHAN under the banner of NAIR SERVICE SOCIETY, with a view to effect commendable changes in the field of technical education.Polytechnic College is situated on a small hillock, surrounded by paddy fields, away from the dust and tumble of city life, in the Pandalam Thekkekara Grama Panchayath, 7 kms from a small town, Pandalam.
-               </p>
+                    <h4 class="text-body fst-italic mb-4"></h4>
+                    </h4>
+                    <p class="mb-4"> Polytechnic Colleges spreads its charm and beauty by moulding technicians of
+                        repute, spreading over the entire globe, serving for the technological excellence from the
+                        establishment year 1958 onwards.
+                        One of the oldest Grant-in-aid Polytechnic College, started by the legend BHARATHA KESARI
+                        PADMABHUSHAN SRI MANNATHU PADMANABHAN under the banner of NAIR SERVICE SOCIETY, with a view to
+                        effect commendable changes in the field of technical education.Polytechnic College is situated
+                        on a small hillock, surrounded by paddy fields, away from the dust and tumble of city life, in
+                        the Pandalam Thekkekara Grama Panchayath, 7 kms from a small town, Pandalam.
+                    </p>
                     <div class="row g-3">
-                        
-                        
+
+
                     </div>
-                   
+
                 </div>
                 <div class="col-lg-5" style="min-height: 300px;">
                     <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s"
-                            src="https://png.pngtree.com/png-vector/20190304/ourmid/pngtree-education-logo-vector-image-png-image_736947.jpg" style="object-fit: cover;">
+                            src="https://png.pngtree.com/png-vector/20190304/ourmid/pngtree-education-logo-vector-image-png-image_736947.jpg"
+                            style="object-fit: cover;">
                     </div>
                 </div>
                 {{!-- <div class="col-lg-5" style="min-height: 500px;">
@@ -421,21 +449,23 @@
                 <div class="col-lg-6 py-5">
                     <div class="py-5">
                         <h1 class="display-5 text-white mb-4">Vision</h1>
-                        <p class="text-white mb-0">To impart quality technical education and develop skilled technicians with social commitment</p>
+                        <p class="text-white mb-0">To impart quality technical education and develop skilled technicians
+                            with social commitment</p>
                     </div>
                     <h1 class="display-5 text-white mb-4">Mission</h1>
                     <p class="text-white mb-0">
                         <li>
-                            	Provide skill oriented training through institute-industry interaction to meet quality technical education
+                            Provide skill oriented training through institute-industry interaction to meet quality
+                            technical education
                         </li>
                         <i>
-                            	To strengthen academic practices in terms of faculty training.
+                            To strengthen academic practices in terms of faculty training.
                         </i>
                         <li>
-                            	Enable the students to excel in their academic pursuits through life long learning.
+                            Enable the students to excel in their academic pursuits through life long learning.
                         </li>
                         <li>
-                            	Inculcate the values of ethics and social responsibilities to develop as a nation builder.
+                            Inculcate the values of ethics and social responsibilities to develop as a nation builder.
                         </li>
                     </p>
 
@@ -444,14 +474,16 @@
                     <div class="appointment-form h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn"
                         data-wow-delay="2s">
                         <h1 class="text-white mb-4">News and events</h1>
-                        
-                            <marquee direction="up" style="color: white;">
-                                {{#each notificationList}}<span style="font-weight:bold;text-transform:uppercase">{{title}}</span><br>{{content}}<br>Date:{{dateUpdated}}<br>
-                                    {{#if link}}<a href="{{link}}" target="_blank" style="color: white;">find More</a>
-                                    {{/if}}<hr>
-                                {{/each}}
-                            </marquee>
-                        
+
+                        <marquee direction="up" style="color: white;">
+                            {{#each notificationList}}<span
+                                style="font-weight:bold;text-transform:uppercase">{{title}}</span><br>{{content}}<br>Date:{{dateUpdated}}<br>
+                            {{#if link}}<a href="{{link}}" target="_blank" style="color: white;">find More</a>
+                            {{/if}}
+                            <hr>
+                            {{/each}}
+                        </marquee>
+
                     </div>
                 </div>
             </div>
@@ -461,9 +493,10 @@
 
 
     <!-- Service Start -->
-        
-<h5 class="position-relative d-inline-block text-primary text-uppercase" style="text-align: center;">Our Departments</h5>
-                        <h1 class="display-6 mb-4">Courses Offered</h1>
+
+    <h5 class="position-relative d-inline-block text-primary text-uppercase" style="text-align: center;">Our Departments
+    </h5>
+    <h1 class="display-6 mb-4">Courses Offered</h1>
 
     <!-- Team Start -->
     <div class="container-fluid py-5">
@@ -471,8 +504,12 @@
             <div class="row g-5">
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.1s">
                     <div class="section-title bg-light rounded h-100 p-5">
-                       <div class="position-relative rounded-top" style="z-index: 1;">
-                            <img class="img-fluid rounded-top w-100" src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                        <div class="position-relative rounded-top" style="z-index: 1;">
+                            <a href="/genaral">
+                                <img class="img-fluid rounded-top w-100"
+                                src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                alt="">
+                            </a>
                             <div
                                 class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
                                 <a class="btn btn-primary btn-square m-1" href="#"><i
@@ -485,13 +522,17 @@
                                         class="fab fa-instagram fw-normal"></i></a>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="position-relative rounded-top" style="z-index: 1;">
-                            <img class="img-fluid rounded-top w-100" src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                            <a href="/Computer">
+                                <img class="img-fluid rounded-top w-100"
+                                src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                alt="">
+                            </a>
                             <div
                                 class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
                                 <a class="btn btn-primary btn-square m-1" href="#"><i
@@ -506,14 +547,18 @@
                         </div>
                         <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
                             <h4 class="mb-2">Computer Engineering</h4>
-                           
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                     <div class="team-item">
                         <div class="position-relative rounded-top" style="z-index: 1;">
-                            <img class="img-fluid rounded-top w-100" src="https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                            <a href="/mech">
+                                <img class="img-fluid rounded-top w-100"
+                                src="https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                alt="">
+                            </a>
                             <div
                                 class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
                                 <a class="btn btn-primary btn-square m-1" href="#"><i
@@ -528,14 +573,18 @@
                         </div>
                         <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
                             <h4 class="mb-2">Mechanical Engineering</h4>
-                            
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.1s">
                     <div class="team-item">
                         <div class="position-relative rounded-top" style="z-index: 1;">
-                            <img class="img-fluid rounded-top w-100" src="https://images.pexels.com/photos/271667/pexels-photo-271667.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                            <a href="/civil">
+                                <img class="img-fluid rounded-top w-100"
+                                src="https://images.pexels.com/photos/271667/pexels-photo-271667.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                alt="">
+                            </a>
                             <div
                                 class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
                                 <a class="btn btn-primary btn-square m-1" href="#"><i
@@ -550,14 +599,18 @@
                         </div>
                         <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
                             <h4 class="mb-2">Civil Engineering</h4>
-                           
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <div class="position-relative rounded-top" style="z-index: 1;">
-                            <img class="img-fluid rounded-top w-100" src="https://images.pexels.com/photos/159220/printed-circuit-board-print-plate-via-macro-159220.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                          <a href="/ec">
+                              <img class="img-fluid rounded-top w-100"
+                                src="https://images.pexels.com/photos/159220/printed-circuit-board-print-plate-via-macro-159220.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                alt="">
+                          </a>
                             <div
                                 class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
                                 <a class="btn btn-primary btn-square m-1" href="#"><i
@@ -572,14 +625,18 @@
                         </div>
                         <div class="team-text position-relative bg-light text-center rounded-bottom p-4 pt-5">
                             <h4 class="mb-2">Electronics an communication </h4>
-                           
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
                     <div class="team-item">
                         <div class="position-relative rounded-top" style="z-index: 1;">
-                            <img class="img-fluid rounded-top w-100" src="https://images.pexels.com/photos/236089/pexels-photo-236089.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                           <a href="/eee">
+                             <img class="img-fluid rounded-top w-100"
+                                src="https://images.pexels.com/photos/236089/pexels-photo-236089.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                alt="">
+                           </a>
                             <div
                                 class="position-absolute top-100 start-50 translate-middle bg-light rounded p-2 d-flex">
                                 <a class="btn btn-primary btn-square m-1" href="#"><i
@@ -603,139 +660,141 @@
     </div>
     <!-- Team End -->
 
-<h5 class="position-relative d-inline-block text-primary text-uppercase" style="text-align: center;">Quick Links</h5>
-                        <h1 class="display-6 mb-4">Quick Links</h1>
-{{!-- second cards --}}
-<div class="body2">
+    <h1 class="display-6 mb-4">Quick Links</h1>
+    {{!-- second cards --}}
+    <div class="body2 mb-5">
+        <div class="containerLink">
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+
+                        <h3> <a href="https://moodle.com/solutions/lms/" target="_blank">LMS – Moodle</a> </h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <img style="width: 150px;" src="https://i.ytimg.com/vi/3ORsUGVNxGs/maxresdefault.jpg">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+
+                        <h3> <a href="#">Swayam NPTEL</a> </h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+
+                        <img style="width: 150px;"
+                            src="https://assets.thehansindia.com/h-upload/2021/01/20/1025790-nptel.webp">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+
+                        <h3> <a href="#">Placement Cell</a> </h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <p></p>
+                        <img style="width: 150px;"
+                            src="https://teresas.ac.in/wp-content/uploads/2018/04/placement-services.png">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
 
 
-   <div class="containerLink">
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    
-                    <h3> <a href="#">LMS – Moodle</a> 		</h3>
+                        <h3> <a href="#">NPTEL</a> </h3>
+                    </div>
                 </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                     <img style="width: 150px;" src="https://i.ytimg.com/vi/3ORsUGVNxGs/maxresdefault.jpg">
-                 
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                 
-                    <h3> <a href="#">Swayam	NPTEL</a> </h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    
-                           <img style="width: 150px;" src="https://assets.thehansindia.com/h-upload/2021/01/20/1025790-nptel.webp">
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                  
-                    <h3> <a href="#">Placement Cell</a> </h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    <p></p>
-                      <img  style="width: 150px;" src="https://teresas.ac.in/wp-content/uploads/2018/04/placement-services.png">
-                       
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                   
-                 
-                    <h3> <a href="#">NPTEL</a> </h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                          <img style="width: 150px;" src="https://manavrachna.edu.in/wp-content/uploads/2017/12/unnamed-1-1024x585.png">
+                <div class="face face2">
+                    <div class="content">
+                        <img style="width: 150px;"
+                            src="https://manavrachna.edu.in/wp-content/uploads/2017/12/unnamed-1-1024x585.png">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
-                        <h1 class="display-6 mb-4">Study Meterials</h1>
-{{!-- second cards --}}
-<div class="body2">
-
-{{#if user}}
-   <div class="containerLink">
-    {{#each docs}}
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    
-                    <h3><a href="#">{{this.subject}}</a></h3>
-                    <h4>{{this.semester}}</h4>
-                    <h4>{{this.department}}</h4>
-
+    <h1 class="display-6 mb-4">Study Meterials</h1>
+    {{!-- second cards --}}
+    <div class="body2">
+        {{#if user}}
+        <div class="containerLink">
+            {{#each docs}}
+            <div class="col-3 mb-3">
+                <div class="card border-0 shadow-none" style="background: #fff;">
+                    <div class="face face1">
+                        <div class="content">
+                            <h3><a href="#">{{this.subject}}</a></h3>
+                            <h4>{{this.semester}}</h4>
+                            <h4>{{this.department}}</h4>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <span>{{year_month}}</span>
+                            <a href="/docs/{{_id}}.pdf" download="{{subject}} questionpaper{{year_month}}">click to
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="face face2">
-                <div class="content">
-                    <span>{{year_month}}</span>
-                    <a href="/docs/{{_id}}.pdf" download="{{subject}} questionpaper{{year_month}}">click to
+            {{/each}}
+        </div>
+    </div>
+
+    {{else}}
+
+
+
+    <div class="containerLink flex-wrap">
+        {{#each docs}}
+        <div class="col-3 mb-3">
+            <div class="card border-0 shadow-none" style="background: #fff;">
+                <div class="face face1">
+                    <div class="content">
+
+                        <h3><a href="#">{{this.subject}}</a></h3>
+                        <h4>{{this.semester}}</h4>
+                        <h4>{{this.department}}</h4>
+
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <span>{{year_month}}</span>
+                        <a>Login to download
+                    </div>
                 </div>
             </div>
         </div>
-       {{/each}}
+        {{/each}}
+
     </div>
-</div>
-
-{{else}}
-
-
-
-   <div class="containerLink">
-    {{#each docs}}
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    
-                    <h3><a href="#">{{this.subject}}</a></h3>
-                    <h4>{{this.semester}}</h4>
-                    <h4>{{this.department}}</h4>
-
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    <span>{{year_month}}</span>
-                    <a>Login to download
-                </div>
-            </div>
-        </div>
-       {{/each}}
     </div>
-</div>
 
 
-{{/if}}
+    {{/if}}
 
-<!------- activities row--------->
-
-       
+    <!------- activities row--------->
 
 
 
-<div class="container-fluid bg-primary bg-appointment my-5 wow fadeInUp" data-wow-delay="0.1s">
+
+
+    <div class="container-fluid bg-primary bg-appointment my-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="row gx-5">
                 <div class="col-lg-6 py-5">
@@ -743,13 +802,14 @@
                         <h1 class="display-5 text-white mb-4">Mandatory Disclosures</h1>
                         <a href="#" class="btn btn-light" style="margin-top: 10px; width:300px">Committees</a>
                         <br>
-                         <a href="#"style="margin-top: 10px; width:300px" class="btn btn-light">RTI</a>
-                         <br>
-                          <a href="#"style="margin-top: 10px; width:300px" class="btn btn-light">PTA</a>
+                        <a href="#" style="margin-top: 10px; width:300px" class="btn btn-light">RTI</a>
+                        <br>
+                        <a href="#" style="margin-top: 10px; width:300px" class="btn btn-light">PTA</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="appointment-form h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="appointment-form h-100 d-flex flex-column justify-content-center text-center p-5 wow zoomIn"
+                        data-wow-delay="0.6s">
                         <h1 class="text-white mb-4">Online Grievances</h1>
                         <form>
                             <div class="row g-3">
@@ -769,36 +829,38 @@
                                         <option value="1"> 1</option>
                                         <option value="2"> 2</option>
                                         <option value="3"> 3</option>
-                                         <option value="3"> 4</option>
-                                          <option value="3"> 5</option>
-                                           <option value="3"> 6</option>
+                                        <option value="3"> 4</option>
+                                        <option value="3"> 5</option>
+                                        <option value="3"> 6</option>
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
+                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name"
+                                        style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
+                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email"
+                                        style="height: 55px;">
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control bg-light border-0 datetimepicker-input"
-                                            placeholder="Appointment Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
+                                        <input type="text" class="form-control bg-light border-0 datetimepicker-input"
+                                            placeholder="Appointment Date" data-target="#date1"
+                                            data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="time" id="time1" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control bg-light border-0 datetimepicker-input"
-                                            placeholder="Appointment Time" data-target="#time1" data-toggle="datetimepicker" style="height: 55px;">
+                                        <input type="text" class="form-control bg-light border-0 datetimepicker-input"
+                                            placeholder="Appointment Time" data-target="#time1"
+                                            data-toggle="datetimepicker" style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="time" id="time1" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control bg-light border-0 datetimepicker-input"
-                                            placeholder="Message" data-target="#time1" data-toggle="datetimepicker" style="height: 55px; width:400px">
+                                        <input type="text" class="form-control bg-light border-0 datetimepicker-input"
+                                            placeholder="Message" data-target="#time1" data-toggle="datetimepicker"
+                                            style="height: 55px; width:400px">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -817,134 +879,140 @@
 
 
 
-                        <h1 class="display-6 mb-4" style="text-align: center; margin-top:10px">Usefull Links</h1>
-{{!-- second cards --}}
-<div class="body2">
+    <h1 class="display-6 mb-4" style="text-align: center; margin-top:10px">Usefull Links</h1>
+    {{!-- second cards --}}
+    <div class="body2">
 
 
-   <div class="containerLink">
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                  
-                    <h3>   <a href="#">Admission</a> 		</h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    
-                          <img style="width: 100px;" src="https://www.naukrimessenger.com/wp-content/uploads/2021/07/sbte.jpg">
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <h3>  <a href="#">Syllabus</a> </h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                 <img style="width: 100px;" src="https://goldeneraeducation.com/wp-content/uploads/2019/09/te-kerala-diploma-time-table.jpg">
+        <div class="containerLink">
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
 
+                        <h3> <a href="#">Admission</a> </h3>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                
-                    <h3> <a href="#">Rules & Regulations</a></h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                      <img style="width: 100px;" src="https://sitttrkerala.ac.in/images/product-logo.png">
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                   
-                    <h3> <a href="#">Academic Calendar</a></h3>
-                </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                                       <img  style="width: 100px;"   src="https://fresheropenings.com/wp-content/uploads/2020/04/AICTE.png">
+                <div class="face face2">
+                    <div class="content">
 
+                        <img style="width: 100px;"
+                            src="https://www.naukrimessenger.com/wp-content/uploads/2021/07/sbte.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                        <h3> <a href="#">Syllabus</a> </h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <img style="width: 100px;"
+                            src="https://goldeneraeducation.com/wp-content/uploads/2019/09/te-kerala-diploma-time-table.jpg">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+
+                        <h3> <a href="#">Rules & Regulations</a></h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <img style="width: 100px;" src="https://sitttrkerala.ac.in/images/product-logo.png">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+
+                        <h3> <a href="#">Academic Calendar</a></h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <img style="width: 100px;"
+                            src="https://fresheropenings.com/wp-content/uploads/2020/04/AICTE.png">
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
- <h1 class="display-6 mb-4"  style="text-align: center; margin-top:10px">Student Corner</h1>
+    <h1 class="display-6 mb-4" style="text-align: center; margin-top:10px">Student Corner</h1>
 
-<div class="body2">
-<div class="containerLink">
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <img src="https://play-lh.googleusercontent.com/lg8_nGEPw8iPLcvBK8KkXrPafbdOpEHeyyqW4cKA208Aj9vELuYWUCdcfq_ubnzodA">
-                    <h3>QP Bank	</h3>
+    <div class="body2">
+        <div class="containerLink">
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                        <img
+                            src="https://play-lh.googleusercontent.com/lg8_nGEPw8iPLcvBK8KkXrPafbdOpEHeyyqW4cKA208Aj9vELuYWUCdcfq_ubnzodA">
+                        <h3>QP Bank </h3>
+                    </div>
                 </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    <p></p>
+                <div class="face face2">
+                    <div class="content">
+                        <p></p>
                         <a href="/all-questions">See Questions</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <img src="data:image/jpeg;base64,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">
-                    <h3>Forms Downloads</h3>
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                        <img
+                            src="data:image/jpeg;base64,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">
+                        <h3>Forms Downloads</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
+                <div class="face face2">
+                    <div class="content">
                         <a href="/all-forms">See all forms</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                    <img src="data:image/png;base64,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">
-                    <h3>Exam Registration</h3>
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                        <img
+                            src="data:image/png;base64,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">
+                        <h3>Exam Registration</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                  
+                <div class="face face2">
+                    <div class="content">
+
                         <a href="#">Read More</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="face face1">
-                <div class="content">
-                   
-                    <img src="https://paymyfee.com/assets/feature-main-1.png">
-                    <h3>Fee Payment</h3>
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+
+                        <img src="https://paymyfee.com/assets/feature-main-1.png">
+                        <h3>Fee Payment</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="face face2">
-                <div class="content">
-                    <a href="#">Read More</a>
+                <div class="face face2">
+                    <div class="content">
+                        <a href="#">Read More</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-   <!-- Footer End -->
+    <!-- Footer End -->
 
 
     <!-- Back to Top -->

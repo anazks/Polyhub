@@ -43,6 +43,9 @@ router.post('/Login',(req,res)=>{
     } else {
       res.redirect("/");
     }
+  }).catch((error)=>{
+    console.log(error);
+    res.redirect("/");
   });
 })
 router.get('/Error/:status', (req, res) => {
@@ -72,8 +75,6 @@ router.get("/", async function (req, res, next) {
 
 });
 router.post('/searchMaterial',async(req,res)=>{
-
-
   try {
     let notifications = await notificationHelper.fetchAllNotifications();
     let docs = await questionPaperHelper.fetchAllDocs();
@@ -83,15 +84,16 @@ router.post('/searchMaterial',async(req,res)=>{
     console.log(docs,"docs")
     if(req.session.user){
       let user = req.session.user;
-      res.render("user/home", { notificationList: notifications,user,docs:searchResults,searchResults});
+      res.render("user/searchResult", { notificationList: notifications,user,docs:searchResults,searchResults});
     }else{
-      res.render("user/home", { notificationList: notifications,docs:searchResults,searchResults});
+      res.render("user/searchResult", { notificationList: notifications,docs:searchResults,searchResults});
     }
     
   } catch (error) {
     res.redirect('/error/503')
   }
 })
+
 router.get("/all-questions", async function (req, res, next) {
   try {
     let allQuestions = await questionPaperHelper.fetchAllQuestionPapers();
