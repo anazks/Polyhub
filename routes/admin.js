@@ -329,6 +329,32 @@ router.post("/add-new-form", (req, res, next) => {
     });
   });
 });
+router.get('/delete-docs/:id',(req,res)=>{
+      let {id} = req.params;
+      formHelper.deleteDocs(id).then((deleteForm)=>{
+        if (deleteForm.errorMsg) {
+          res.redirect("/admin/docs");
+        } else {
+          console.log("successfully deleted");
+          res.redirect("/admin/docs");
+        }
+      })
+})
+router.get("/edit-docs/:id", async (req, res, next) => {
+  try {
+    let docid = req.params.id;
+    let formData = await formHelper.fetchOneDocs(docid);
+    if (formData.errorMsg) {
+      res.status(404);
+      res.redirect("/admin/forms");
+    } else
+      res.render("admin/edit-docs", {
+        formObj: formData,
+      });
+  } catch (error) {
+    res.redirect('/error/503')
+  }
+});
 router.get("/delete-form/:id", (req, res, next) => {
   let f_id = req.params.id;
   formHelper.deleteForm(f_id).then((deletedForm) => {
@@ -354,6 +380,32 @@ router.get("/edit-form-page/:id", async (req, res, next) => {
   } catch (error) {
     res.redirect('/error/503')
   }
+});
+router.post("/edit-docs-page", (req, res, next) => {
+  console.log(req.body);
+  console.log(req.files);
+  let formObj = req.body;
+  let formId = req.body._id;
+  delete req.body._id;
+  formObj.dateAdded = new Date().toLocaleDateString();
+  formHelper.updateDocs(formObj, formId).then((err) => {
+    if (err) console.log(err);
+    else {
+      if (req.files) {
+        let docFromClient = req.files.newForm;
+        let uploadPath = "./public/docs/" + formId + ".pdf";
+        docFromClient.mv(uploadPath, (err, done) => {
+          if (!err) {
+            res.status(200);
+            res.redirect("/admin/docs");
+          } else {
+            res.status(400);
+            res.redirect("/admin/docs");
+          }
+        });
+      } else res.redirect("/admin/forms");
+    }
+  });
 });
 router.post("/edit-form-page", (req, res, next) => {
   // console.log(req.body);
